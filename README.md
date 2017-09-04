@@ -14,6 +14,8 @@ Feel free to do whatever you want with it. If there's an API for vintage table p
 3. Http client: [axios](https://github.com/mzabriskie/axios)
 4. JSON API Providers: [Cryptocompare](https://cryptocompare.com) and [Coinmarketcap](https://coinmarketcap.com)
 
+Unfortunately the site is not responsive at all. Will make a mobile "application-like" UI with Vue and hopefully Node. Will use material.css as frontend framework and if time permits, a new mobile freindly base like ionic.
+
 > Stupid Mart, if you were smart you would have kept it moving, I'm a human consuming shark, body parts get chewed in, I'm ripping these dudes apart.
 > Dizaster, LA
 
