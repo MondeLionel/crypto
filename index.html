@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Crypto Prices</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css">
+	<script src="https://unpkg.com/vue"></script>
+
+	<style type="text/css">
+		
+		#app{
+			margin-top: 10em;
+
+		}
+		.sidethings{
+			margin-top: 10em;
+		}
+	</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="">
+      <!-- <img src="" alt="" width="112" height="28"> -->
+      An AmaKhala Filim Project
+    </a>
+
+    <div class="navbar-burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</nav>
+
+<div id="app">
+	 <section class="section">
+    <div class="container">
+      <h1 class="title">
+       {{message}}
+      </h1>
+      <p class="subtitle">
+        Small website to see the price of Crypto currencies <strong>Updates every hour</strong>!
+      </p>
+    </div>
+  </section>
+</div>
+
+<div class="columns">
+	<div class="column is-three-quarters">
+	<div id="app2">
+		<div class="container is-fluid">
+			<div id="app">
+		  		<table class="table">
+				    <thead>
+				      <tr>
+				        <td>Rank</td>
+				        <td>Name</td>
+				        <td>Symbol</td>
+				        <td>Price (USD)</td>
+				        <td>1H</td>
+				        <td>1D</td>
+				        <td>1W</td>
+				        <td>Market Cap (USD)</td>
+				        <td>Price (ZAR)</td>
+				    </thead>
+				    <tbody>
+				    <tr v-for="coin in coins">
+				    	<td>{{coin.rank}}</td>
+				    	<td>{{ coin.name }}</td>
+				    	 <td>{{ coin.symbol }}</td>
+					      <td>{{ coin.price_usd | currency }}</td>
+					      <td>
+					        <span v-if="coin.percent_change_1h > 0">+</span>{{ coin.percent_change_1h }}%
+					      </td>
+					      <td>
+					        <span v-if="coin.percent_change_24h > 0">+</span>{{ coin.percent_change_24h }}%
+					      </td>
+					      <td>
+					        <span v-if="coin.percent_change_7d > 0">+</span>{{ coin.percent_change_7d }}%
+					      </td>
+					      <td>{{ coin.market_cap_usd | currency }}</td>
+					      <td>{{ sooncoming }}</td>
+				    </tr>
+
+				    </tbody>
+		  		</table>
+			</div>	
+		</div>
+	</div><!-- Table div app2-->
+
+
+</div><!-- end of column 1-->
+
+
+<!-- start of column 2 -->
+	<div class="column sidethings">
+		<div class="card">
+		  <div class="card-image">
+		    <figure class="image">
+		      <img src="nikegif.gif" alt="Image">
+		   
+		    
+		    </figure>
+		  </div>
+		  <div class="card-content">
+		    <div class="media">
+		 <!--      <div class="media-left">
+		        <figure class="image is-48x48">
+		          <img src="http://bulma.io/images/placeholders/96x96.png" alt="Image">
+		        </figure>
+		      </div> -->
+		   <!--    <div class="media-content">
+		        <p class="title is-4">John Smith</p>
+		        <p class="subtitle is-6">@johnsmith</p>
+		      </div> -->
+		    </div>
+
+		    <div class="content">
+		  	When you feel like saying "fuck it" and bust in there, elephant-through-a-door-like: Just add some swag and do it. 
+		      <br>
+		      <small>11:09 PM - 1 Jan 2016</small>
+		    </div>
+		  </div>
+		</div>	
+	</div><!-- end of column 2 -->
+
+
+<!-- end of columns container -->
+	</div>
+
+<!-- start of footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>Made with <span class="icon is-small"><i class="fa fa-heart"></i> </span> by Monde "The Magic" Nyawose. A project of <a href="">amaKhala Filim (AFK)</a></p>
+      <p>
+        <a class="icon" href="#">
+          <i class="fa fa-instagram"></i>
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+<script type="text/javascript">
+// vue js shit
+var app = new Vue({
+
+		el: '#app', //this points out the target div...no idea what "el" is however.
+		data: {
+			message: 'Cryptolinearity site for Crypto Nerds'
+		}
+	})
+
+	
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!--     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/vue2-filters/dist/vue2-filters.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
